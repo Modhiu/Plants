@@ -2,7 +2,6 @@ import SwiftData
 
 @Model
 class PlantsData{
-    var id : Int
     var name : String
     var room : String
     var light : String
@@ -10,8 +9,7 @@ class PlantsData{
     var days : String
     
 
-init(id: Int, name: String, room: String, light: String, water: String, days: String) {
-      self.id = id
+init(name: String, room: String, light: String, water: String, days: String) {
       self.name = name
       self.room = room
       self.light = light
@@ -19,6 +17,4 @@ init(id: Int, name: String, room: String, light: String, water: String, days: St
       self.days = days
   }
 }
-//init(id: Int, name: String , room: String , light : String = "Full sun" , water : String = "20 - 50 ml" , days : String = "Every day") {
-   
-   
+
