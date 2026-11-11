@@ -3,7 +3,7 @@ import Playgrounds
 import SwiftData
 
 struct homePage: View {
-    @State private var showCover = false
+    @StateObject private var viewModel = plantMV()
     
     var body: some View {
         VStack{
@@ -23,11 +23,11 @@ struct homePage: View {
                 .padding()
             
             Text("Now all your plants will be in one place and we will help you take care of them :)🪴").frame(maxWidth: .infinity, alignment: .center).font(.system(size: 16, weight: .regular))  .foregroundStyle(.textcolor).multilineTextAlignment(.center)
-                .padding(20)
+                .padding(30)
             
             NavigationStack{
                 Button{
-                    showCover = true
+                    viewModel.showCover = true
                 }label: {
                     Text("Set Plant Reminder")
                         .font(.system(size: 17, weight: .medium))
@@ -41,7 +41,7 @@ struct homePage: View {
             
         }.background(Color.background.ignoresSafeArea())
         
-            .fullScreenCover(isPresented: $showCover) {
+            .fullScreenCover(isPresented: $viewModel.showCover) {
                 NewReminder()
             }
     }
