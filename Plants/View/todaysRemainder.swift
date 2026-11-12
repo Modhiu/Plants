@@ -30,15 +30,23 @@ struct todaysReminder: View {
             List(plants) { plant in
                 HStack{
                     Button{//check
-                        
+                        plant.isChecked.toggle()
                     }label: {
+                        Image(systemName: plant.isChecked ? "checkmark.circle.fill" : "circle")
                         
                     }
                     
                     VStack{
+                        HStack(spacing : 2 ){
+                            Image(systemName: "location")
+                            Text("\(plant.room)")}
+                        Text("\(plant.name)")
+                        
                         //لوكيشن
                         //نيم
                         HStack{
+                            Text("\(plant.light)")
+                            Text("\(plant.water)")
                             //الايت و الواتر
                         }
                         
