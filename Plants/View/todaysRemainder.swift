@@ -4,6 +4,9 @@ import SwiftUI
 
 struct todaysReminder: View {
     @StateObject private var viewModel = todaysReminderMV()
+    @StateObject private var newreminder = plantMV()
+    @Query private var plants: [PlantsData]
+    
     var body: some View {
         VStack{
             Text("My Plants 🌱")
@@ -14,25 +17,64 @@ struct todaysReminder: View {
             Divider().background(Color.dcolor).padding(10)
             
             VStack{
-                ProgressView(value: 0.5){
-                    if viewModel.reminders > 0 {
-                        Text("\(viewModel.reminders) of your plants feel loved today✨").frame(maxWidth: .infinity, alignment: .center)
-                        .font(.system(size: 18, weight: .regular))}
-                    else {
-                        Text("Your plants are waiting for a sip 💦").frame(maxWidth: .infinity, alignment: .center)
+                ProgressView(value: viewModel.ProgressCount(in: plants)){
+                    Text(viewModel.title(in: plants))
+                        .frame(maxWidth: .infinity, alignment: .center)
                             .font(.system(size: 18, weight: .regular))
                     }
-                }
-                .padding(10)
-            }
-            .padding(.horizontal, 26)
+                }.tint(Color("buttonscolor"))
+                    .padding(.vertical , 39)
+                
+            Spacer()
             
+            List(plants) { plant in
+                HStack{
+                    Button{//check
+                        
+                    }label: {
+                        
+                    }
+                    
+                    VStack{
+                        //لوكيشن
+                        //نيم
+                        HStack{
+                            //الايت و الواتر
+                        }
+                        
+                    }//الصف
+                }
+                
+            }.padding()
+            
+                
+                
+                
+                
+                Button{
+                    newreminder.showCover = true
+                    
+                }label: {
+                    Image(systemName: "plus")
+                        .foregroundStyle(.white)
+                    
+                }.sheet(isPresented: $newreminder.showCover) {NewReminder()}
+        
+                        .buttonStyle(.borderedProminent)
+                        .clipShape(.circle)
+                        .tint(.buttonscolor)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding(-2)
+                }
+        .padding(.horizontal, 24 )
+                
+                
+        }
             
         }
         
-    }
     
-}
+
 
 #Preview {
     todaysReminder()

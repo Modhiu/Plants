@@ -24,7 +24,9 @@ class NewReminderMV : ObservableObject{
             room: room,
             light: light,
             water: water,
-            days: days
+            days: days,
+            isChecked: false //not sure
+        
         )
         context.insert(plant)
     }
