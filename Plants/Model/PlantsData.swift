@@ -17,5 +17,10 @@ class PlantsData{
       self.days = days
       self.isChecked = isChecked
   }
+    
+    
+    
 }
+
+
 

@@ -10,7 +10,7 @@ struct homePage: View {
             Text("My Plants 🌱")
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.system(size: 34, weight: .bold))
-                .padding(10)
+                .padding(24)
             
             Divider().background(Color.dcolor).padding(10)
            

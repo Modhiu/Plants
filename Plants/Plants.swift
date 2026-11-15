@@ -5,7 +5,7 @@ import SwiftData
 @main struct Plants: App {
     var body: some Scene {
         WindowGroup {
-            homePage()
+            todaysReminder()
         }
         .modelContainer(for: [PlantsData.self])
     }
