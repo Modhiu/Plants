@@ -1,11 +1,10 @@
 import SwiftUI
 import SwiftData
 
+
 struct NewReminder : View {
-    @ObservedObject var viewModel =  PlantVM()
-    @Environment(\.dismiss) private var dismiss
+    @ObservedObject var viewModel :  PlantVM
     @Environment(\.modelContext) private var context
-    //@Query private var plants: [PlantsData]
     
     var body: some View {
         NavigationStack{
@@ -58,6 +57,20 @@ struct NewReminder : View {
                             Label("Water", systemImage: "drop").foregroundStyle(.xx)
                         }
                     }//section 3
+                    
+                    
+                    if viewModel.plantToEdit != nil {
+                        Section {
+                            Button(role: .destructive){
+                                viewModel.deleteEditingPlant(context: context)
+                            } label: {
+                                Text("Delete Reminder")
+                                    .frame(maxWidth: .infinity)
+                                
+                            }
+                        }
+                        
+                    }
                 }
                 
                 .toolbar {
@@ -67,7 +80,7 @@ struct NewReminder : View {
                     }
                     ToolbarItem(placement: .topBarLeading) {
                         Button{
-                            dismiss()
+                            viewModel.showForm = false
                         }label: {
                             Image(systemName: "xmark")
                         }
@@ -75,15 +88,14 @@ struct NewReminder : View {
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button{
-                            viewModel.save(context: context)
-                            viewModel.showForm = false
-                            viewModel.test = true
+                            viewModel.save(context: context) 
                         }label: {
                             Image(systemName: "checkmark")
                             
                         } .buttonStyle(.borderedProminent)
                             .tint(.buttonscolor)
                     }
+                    
                 }
                 
             }//.navigationDestination(isPresented: $viewModel.Next) {

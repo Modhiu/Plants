@@ -1,7 +1,9 @@
 import SwiftData
+import Foundation
 
 @Model
 class PlantsData{
+    var id = UUID()
     var name : String
     var room : String
     var light : String
@@ -10,6 +12,7 @@ class PlantsData{
     var isChecked: Bool
 
     init(name: String, room: String, light: String, water: String, days: String ,isChecked : Bool = false) {
+        
       self.name = name
       self.room = room
       self.light = light

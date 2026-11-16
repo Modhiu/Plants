@@ -1,6 +1,7 @@
 import SwiftUI
-import Playgrounds
 import SwiftData
+import Combine
+
 
 struct homePage: View {
     @StateObject private var viewModel = PlantVM()
@@ -13,24 +14,24 @@ struct homePage: View {
             Group{
                 switch viewModel.state(for: plants){
                 case .empty:
-                    todaysReminder()
+                    EmptyView()
                 case .allDone:
-                    todaysReminder()
+                    todaysReminder(viewModel: viewModel)
                 case .list:
-                    todaysReminder()
+                    todaysReminder(viewModel: viewModel)
                 }
             }.background(Color.background.ignoresSafeArea())
-                .sheet(isPresented: $viewModel.showForm){
-                    NewReminder(viewModel: viewModel)
-                }
+                        .sheet(isPresented: $viewModel.showForm) {
+                            NewReminder(viewModel: viewModel)
+                                .presentationBackground(Color.background)
+                        }
+            
         }
     }
-}
+    }
 
 #Preview {
     homePage()
 }
 
-#Playground {
-    _ = 1 + 2
-}
+

@@ -1,6 +1,6 @@
 import SwiftData
 import SwiftUI
-
+import Combine
 
 
 struct splashview: View {
@@ -41,9 +41,6 @@ struct splashview: View {
                 
             }.background(Color.background.ignoresSafeArea())
             
-                .fullScreenCover(isPresented: $viewModel.showForm) {
-                    NewReminder()
-                }
                 .sheet(isPresented: $viewModel.showForm) {
                     NewReminder(viewModel: viewModel)
                 }
