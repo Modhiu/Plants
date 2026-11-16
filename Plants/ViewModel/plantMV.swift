@@ -4,6 +4,8 @@ import SwiftData
 
 
 class plantMV : ObservableObject{
+   // var context: ModelContext?
+    
     @Published var Next = false
     @Published var showCover = false
     @Published var name = ""
@@ -60,10 +62,22 @@ class plantMV : ObservableObject{
         return plants.filter { $0.isChecked }.count
     }
     
-    func deletereminder (plant :[PlantsData], context: ModelContext){
+    func deletereminder (ـ plant :[PlantsData], context: ModelContext){
         context.delete(plant[0])
 
     }
+    
+    func update(plant: PlantsData,name: String,room: String,light: String,water: String,days: String) {
+            plant.name = name
+            plant.room = room
+            plant.light = light
+            plant.water = water
+            plant.days = days
+            //plant.isChecked = isChecked
+        }
+    
+    
+    
     
    
     

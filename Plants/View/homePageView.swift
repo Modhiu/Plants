@@ -44,6 +44,13 @@ struct homePage: View {
             .fullScreenCover(isPresented: $viewModel.showCover) {
                 NewReminder()
             }
+            .sheet(isPresented: $viewModel.showCover) {
+                NewReminder(viewModel: viewModel)
+            }
+            .navigationDestination(isPresented: $viewModel.Next) {
+                todaysReminder()
+                    .navigationBarBackButtonHidden(true)
+            }
     }
 }
 

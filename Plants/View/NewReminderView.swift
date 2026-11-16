@@ -2,10 +2,10 @@ import SwiftUI
 import SwiftData
 
 struct NewReminder : View {
-    @StateObject private var viewModel =  plantMV()
+    @ObservedObject var viewModel =  plantMV()
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
-    @Query private var plants: [PlantsData]
+    //@Query private var plants: [PlantsData]
     
     var body: some View {
         NavigationStack{
@@ -76,6 +76,7 @@ struct NewReminder : View {
                     ToolbarItem(placement: .topBarTrailing) {
                         Button{
                             viewModel.saveReminder(context: context)
+                            viewModel.showCover = false
                             viewModel.Next = true
                         }label: {
                             Image(systemName: "checkmark")
@@ -85,12 +86,12 @@ struct NewReminder : View {
                     }
                 }
                 
-            }.navigationDestination(isPresented: $viewModel.Next) {
-                todaysReminder()
-        }
+            }//.navigationDestination(isPresented: $viewModel.Next) {
+                //todaysReminder()
+      //  }
         }
     }
 }
 #Preview {
-    homePage()
+    NewReminder(viewModel: plantMV())
 }

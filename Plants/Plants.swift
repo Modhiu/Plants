@@ -4,8 +4,10 @@ import SwiftData
 
 @main struct Plants: App {
     var body: some Scene {
-        WindowGroup {
-            todaysReminder()
+            WindowGroup {
+                NavigationStack{
+                homePage()
+            }
         }
         .modelContainer(for: [PlantsData.self])
     }
