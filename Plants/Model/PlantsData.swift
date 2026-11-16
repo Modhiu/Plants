@@ -1,7 +1,7 @@
 import SwiftData
 
 @Model
-class PlantsData{
+class PlantsData : Identifiable{
     var name : String
     var room : String
     var light : String

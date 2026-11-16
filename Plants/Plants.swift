@@ -9,6 +9,6 @@ import SwiftData
                 homePage()
             }
         }
-        .modelContainer(for: [PlantsData.self])
+        .modelContainer(for: PlantsData.self)
     }
 }
