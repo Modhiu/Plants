@@ -2,16 +2,23 @@ import SwiftUI
 import SwiftData
 
 
-@main struct Plants: App {
+@main
+struct Plants: App {
+    @AppStorage("hasSeenSplash") private var hasSeenSplash = false
     init() {
             NotificationManager.shared.requestPermission()
         }
 
     var body: some Scene {
             WindowGroup {
-                NavigationStack{
-                homePage()
-            }
+                if hasSeenSplash {
+                    homePage()
+                } else {
+                    splashview {
+                        hasSeenSplash = true
+                    }
+                }
+
         }
         .modelContainer(for: PlantsData.self)
     }

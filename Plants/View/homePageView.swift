@@ -16,7 +16,7 @@ struct homePage: View {
                 case .empty:
                     EmptyView()
                 case .allDone:
-                    todaysReminder(viewModel: viewModel)
+                    AllDoneView(viewModel: viewModel)
                 case .list:
                     todaysReminder(viewModel: viewModel)
                 }
