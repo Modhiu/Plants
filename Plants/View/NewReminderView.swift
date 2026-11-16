@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct NewReminder : View {
-    @ObservedObject var viewModel =  plantMV()
+    @ObservedObject var viewModel =  PlantVM()
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     //@Query private var plants: [PlantsData]
@@ -75,9 +75,9 @@ struct NewReminder : View {
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button{
-                            viewModel.saveReminder(context: context)
-                            viewModel.showCover = false
-                            viewModel.Next = true
+                            viewModel.save(context: context)
+                            viewModel.showForm = false
+                            viewModel.test = true
                         }label: {
                             Image(systemName: "checkmark")
                             
@@ -93,5 +93,5 @@ struct NewReminder : View {
     }
 }
 #Preview {
-    NewReminder(viewModel: plantMV())
+    NewReminder(viewModel: PlantVM())
 }

@@ -6,7 +6,7 @@ struct updateview: View {
 
     let plant: PlantsData
 
-    @StateObject private var viewModel = plantMV()
+    @StateObject private var viewModel = PlantMV()
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
 

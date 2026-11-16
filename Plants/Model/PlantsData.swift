@@ -1,7 +1,7 @@
 import SwiftData
 
 @Model
-class PlantsData : Identifiable{
+class PlantsData{
     var name : String
     var room : String
     var light : String
@@ -9,7 +9,7 @@ class PlantsData : Identifiable{
     var days : String
     var isChecked: Bool
 
-    init(name: String, room: String, light: String, water: String, days: String ,isChecked : Bool) {
+    init(name: String, room: String, light: String, water: String, days: String ,isChecked : Bool = false) {
       self.name = name
       self.room = room
       self.light = light

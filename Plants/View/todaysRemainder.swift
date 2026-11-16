@@ -3,9 +3,7 @@ import SwiftUI
 
 
 struct todaysReminder: View {
-    @StateObject private var viewModel = plantMV()
-    
-    @StateObject private var newreminder = plantMV()
+    @ObservedObject var viewModel: PlantVM
     @Query private var plants: [PlantsData]
     
     var body: some View {
@@ -19,7 +17,7 @@ struct todaysReminder: View {
                 Divider().background(Color.dcolor)
                 
                 VStack{
-                    ProgressView(value: viewModel.ProgressCount(in: plants)){
+                    ProgressView(value: viewModel.progressCount(in: plants)){
                         Text(viewModel.title(in: plants))
                             .padding(.vertical ,8)
                             .frame(maxWidth: .infinity, alignment: .center)
@@ -67,7 +65,7 @@ struct todaysReminder: View {
             }
         }
         Button{
-            newreminder.showCover = true
+            viewModel.showForm = true
             
         }label: {
             Image(systemName: "plus")
@@ -79,7 +77,7 @@ struct todaysReminder: View {
         .buttonStyle(.borderedProminent)
         .buttonBorderShape(.circle)
         .tint(.buttonscolor)
-        .sheet(isPresented: $newreminder.showCover) {
+        .sheet(isPresented: $viewModel.showForm) {
             NewReminder()
         }.frame(maxWidth: .infinity, alignment: .trailing)
             .padding(.horizontal, 24 )
@@ -88,6 +86,4 @@ struct todaysReminder: View {
     }
 }
 
-#Preview {
-    todaysReminder()
-}
+

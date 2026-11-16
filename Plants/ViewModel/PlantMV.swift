@@ -5,12 +5,12 @@ enum PlantState {
     case empty, allDone, list
 }
 
-class plantVM : ObservableObject{
+class PlantVM : ObservableObject{
     //var context: ModelContext?
     @Published var showForm = false //للشيت
     @Published var plantToEdit: PlantsData? //للتعديل
     //@Published var editingplant: PlantsData?
-    
+    @Published var test = false 
     
     //@Published var Next = false
     @Published var name = ""
@@ -56,13 +56,13 @@ class plantVM : ObservableObject{
     
     func state(for plants: [PlantsData]) -> PlantState {
             if plants.isEmpty { return .empty }
-            if CheckedCount(in: plants) == plants.count { return .allDone }
+            if checkedCount(in: plants) == plants.count { return .allDone }
             return .list
         }
     
     
 
-    func saveReminder(context: ModelContext) {
+    func save(context: ModelContext) {
         if let plant = plantToEdit{
             plant.name  = name
             plant.room  = room
@@ -77,18 +77,18 @@ class plantVM : ObservableObject{
             }
     
     func title (in plants: [PlantsData]) -> String {
-        let count = CheckedCount(in: plants)
+        let count = checkedCount(in: plants)
                 return count > 0
         ? "\(count) of your plants feel loved today✨"
         : "Your plants are waiting for a sip 💦"
     }
     
-    func ProgressCount (in plants: [PlantsData]) -> Float { // return number of progress percentage bar
+    func progressCount (in plants: [PlantsData]) -> Float { // return number of progress percentage bar
         guard !plants.isEmpty else { return 0 }
-        return Float(CheckedCount(in: plants)) / Float(plants.count)
+        return Float(checkedCount(in: plants)) / Float(plants.count)
         
     }
-    func CheckedCount(in plants: [PlantsData]) -> Int { // return number of reminders that has been checked
+    func checkedCount(in plants: [PlantsData]) -> Int { // return number of reminders that has been checked
         return plants.filter { $0.isChecked }.count
     }
     func toggle(_ plant: PlantsData) {
