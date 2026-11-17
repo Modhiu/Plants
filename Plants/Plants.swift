@@ -14,9 +14,13 @@ struct Plants: App {
                 if hasSeenSplash {
                     homePage()
                 } else {
-                    splashview {
-                        hasSeenSplash = true
-                    }
+                    splashview ()
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                hasSeenSplash = true
+                                
+                            }
+                        }
                 }
 
         }

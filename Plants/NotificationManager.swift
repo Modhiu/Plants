@@ -29,7 +29,7 @@ final class NotificationManager{
 
         let seconds = TimeInterval(intervalDays(from: days) * 24 * 60 * 60)
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: true)
-
+        
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
