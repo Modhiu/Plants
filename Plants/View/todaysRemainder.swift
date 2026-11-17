@@ -32,7 +32,7 @@ struct todaysReminder: View {
                     .padding(.vertical, 8)
                     
                     List {
-                        ForEach(viewModel.sorted(plants)) { plant in
+                        ForEach(plants) { plant in
                         HStack {
                             Button {
                                 plant.isChecked.toggle()
@@ -52,8 +52,6 @@ struct todaysReminder: View {
                                     .font(.system(size: 28, weight: .regular))
                                     .foregroundStyle(.xx)
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    .contentShape(Rectangle())
-                                    .onTapGesture { viewModel.editing(plant)}
                                 
                                 HStack {
                                     Text("\(plant.light)")
@@ -78,9 +76,11 @@ struct todaysReminder: View {
                             }
                         }
                     }
-                    } .listStyle(.plain)                     .scrollContentBackground(.hidden)
+                    } .listStyle(.plain)                        .scrollContentBackground(.hidden)
                     
                 }
+            
+        
             
             Button {
                 viewModel.Adding()
@@ -94,7 +94,7 @@ struct todaysReminder: View {
             .buttonBorderShape(.circle)
             .tint(.buttonscolor)
             .padding(.trailing, 24)
-            .padding(.bottom, 24)    }
+            .padding(.bottom, 24)                     }
     }
 }
 #Preview {
