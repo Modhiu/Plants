@@ -1,7 +1,7 @@
 # Planto 🌱
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ba37eca3-b623-4517-8e06-96ccc74d1deb" alt="Planto mockup" width="800">
+<img width="2400" height="1200" alt="planto-mockup-landscape-dark-v2" src="https://github.com/user-attachments/assets/72de2545-ef6f-47f9-a833-570d3ef5d29e" />
 </p>
 
 ## App Description
