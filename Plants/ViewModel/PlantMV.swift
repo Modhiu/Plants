@@ -8,8 +8,8 @@ enum PlantState {
 
 class PlantVM : ObservableObject{
     //var context: ModelContext?
-    @Published var showForm = false //للشيت
-    @Published var plantToEdit: PlantsData? //للتعديل
+    @Published var showForm = false
+    @Published var plantToEdit: PlantsData?
     //@Published var editingplant: PlantsData?
     @Published var test = false
     
@@ -79,7 +79,7 @@ class PlantVM : ObservableObject{
             }
         try? context.save()
 
-        NotificationManager.shared.schedule(id: item.id.uuidString, days: item.days)
+        NotificationManager.shared.schedule(id: item.id.uuidString, days: item.days,plantName: item.name)
         }
     
     func title (in plants: [PlantsData]) -> String {

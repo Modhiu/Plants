@@ -12,9 +12,9 @@ struct Plants: App {
     var body: some Scene {
             WindowGroup {
                 if hasSeenSplash {
-                    homePage()
+                    homePage().preferredColorScheme(.dark)
                 } else {
-                    splashview ()
+                    splashview ().preferredColorScheme(.dark)
                         .onAppear {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 hasSeenSplash = true

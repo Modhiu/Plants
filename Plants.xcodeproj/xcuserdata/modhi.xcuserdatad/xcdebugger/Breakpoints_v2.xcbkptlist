@@ -20,5 +20,135 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FB2E0C48-5350-435D-88BB-597EFA02E6F1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Plants/ViewModel/PlantMV.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "PlantVM"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "FB2E0C48-5350-435D-88BB-597EFA02E6F1 - b89911ba4acf329b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Plants.PlantVM.water : Swift.String"
+                  moduleName = "Plants.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/modhi/Desktop/Plants/Plants/ViewModel/PlantMV.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+               <Location
+                  uuid = "FB2E0C48-5350-435D-88BB-597EFA02E6F1 - 5ffc1b54422052c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapped field init accessor of Plants.PlantVM.water : Swift.String"
+                  moduleName = "Plants.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/modhi/Desktop/Plants/Plants/ViewModel/PlantMV.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+               <Location
+                  uuid = "FB2E0C48-5350-435D-88BB-597EFA02E6F1 - 5a907b14deac7641"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plants.PlantVM.water.getter : Swift.String"
+                  moduleName = "Plants.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/modhi/Desktop/Plants/Plants/ViewModel/PlantMV.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+               <Location
+                  uuid = "FB2E0C48-5350-435D-88BB-597EFA02E6F1 - 32532211bdc5164d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plants.PlantVM.water.setter : Swift.String"
+                  moduleName = "Plants.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/modhi/Desktop/Plants/Plants/ViewModel/PlantMV.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+               <Location
+                  uuid = "FB2E0C48-5350-435D-88BB-597EFA02E6F1 - 703118459c0cbe7c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plants.PlantVM.water.modify : Swift.String"
+                  moduleName = "Plants.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/modhi/Desktop/Plants/Plants/ViewModel/PlantMV.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+               <Location
+                  uuid = "FB2E0C48-5350-435D-88BB-597EFA02E6F1 - 9816934e32924526"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plants.PlantVM.$water.getter : Combine.Published&lt;Swift.String&gt;.Publisher"
+                  moduleName = "Plants.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/modhi/Desktop/Plants/Plants/ViewModel/PlantMV.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+               <Location
+                  uuid = "FB2E0C48-5350-435D-88BB-597EFA02E6F1 - e6d41353c643d32"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plants.PlantVM.$water.setter : Combine.Published&lt;Swift.String&gt;.Publisher"
+                  moduleName = "Plants.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/modhi/Desktop/Plants/Plants/ViewModel/PlantMV.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+               <Location
+                  uuid = "FB2E0C48-5350-435D-88BB-597EFA02E6F1 - b8783a9e98c5df21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plants.PlantVM.$water.modify : Combine.Published&lt;Swift.String&gt;.Publisher"
+                  moduleName = "Plants.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/modhi/Desktop/Plants/Plants/ViewModel/PlantMV.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

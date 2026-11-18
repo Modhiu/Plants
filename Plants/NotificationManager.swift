@@ -21,18 +21,19 @@ final class NotificationManager{
             default:              return 1
             }
         }
-    func schedule(id: String, days: String) {
-        let content = UNMutableNotificationContent()
-        content.title = "Planto"
-        content.body = "Hey! let's water your plant"
-        content.sound = .default
+    func schedule(id: String, days: String, plantName: String) {
+           let content = UNMutableNotificationContent()
+           content.title = "Planto"
+           content.body = "Hey! let's water \(plantName) 🌱"
+           content.sound = .default
 
-        let seconds = TimeInterval(intervalDays(from: days) * 24 * 60 * 60)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: true)
-        
-        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request)
-    }
+           let seconds: TimeInterval = 10
+           //let seconds = TimeInterval(intervalDays(from: days) * 24 * 60 * 60)
+           let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: true)
+
+           let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+           UNUserNotificationCenter.current().add(request)
+       }
     func cancel(id: String) {
             UNUserNotificationCenter.current()
                 .removePendingNotificationRequests(withIdentifiers: [id])
