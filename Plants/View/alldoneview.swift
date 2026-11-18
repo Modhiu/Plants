@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AllDoneView: View {
     @ObservedObject var viewModel: PlantVM
-
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack {

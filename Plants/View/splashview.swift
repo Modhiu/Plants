@@ -3,7 +3,7 @@ import SwiftUI
 
 
 struct splashview: View {
-    @StateObject private var viewModel = PlantVM()
+    @ObservedObject var viewModel: PlantVM
 
     var body: some View {
         NavigationStack {
@@ -32,7 +32,7 @@ struct splashview: View {
                     .padding(30)
 
                 Button {
-                    viewModel.showForm = true
+                    viewModel.Adding()
                 } label: {
                     Text("Set Plant Reminder")
                         .font(.system(size: 17, weight: .medium))
@@ -46,9 +46,6 @@ struct splashview: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.background.ignoresSafeArea())
-            .sheet(isPresented: $viewModel.showForm) {
-                NewReminder(viewModel: viewModel)
-            }
             .navigationDestination(isPresented: $viewModel.test) {
                 todaysReminder(viewModel: viewModel)
                     .navigationBarBackButtonHidden(true)
@@ -57,7 +54,6 @@ struct splashview: View {
     }
 }
 #Preview {
-    splashview().preferredColorScheme(.dark)
+    splashview(viewModel: PlantVM())
+        .preferredColorScheme(.dark)
 }
-
-س

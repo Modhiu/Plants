@@ -1,9 +1,10 @@
 import SwiftData
 import SwiftUI
-import Combine
+
 
 struct todaysReminder: View {
     @ObservedObject var viewModel: PlantVM
+    
     @Environment(\.modelContext) private var context
     @Query private var plants: [PlantsData]
     
@@ -39,7 +40,7 @@ struct todaysReminder: View {
                             } label: {
                                 Image(systemName: plant.isChecked ? "checkmark.circle.fill" : "circle")
                                     .foregroundStyle(.buttonscolor)
-                            }
+                            }.buttonStyle(.borderless)
                             .padding(4)
                             
                             VStack {
@@ -68,7 +69,9 @@ struct todaysReminder: View {
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             }
-                        }.swipeActions {
+                        }.contentShape(Rectangle())
+                        .onTapGesture { viewModel.editing(plant) }
+                                .swipeActions {
                             Button(role: .destructive) {
                                 viewModel.delete(plant, context: context)
                             }label: {

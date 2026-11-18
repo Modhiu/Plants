@@ -3,7 +3,8 @@ import SwiftData
 
 
 struct NewReminder : View {
-    @ObservedObject var viewModel :  PlantVM
+    @ObservedObject var viewModel: PlantVM
+    
     @Environment(\.modelContext) private var context
     
     var body: some View {
@@ -106,4 +107,5 @@ struct NewReminder : View {
 }
 #Preview {
     NewReminder(viewModel: PlantVM())
+        .modelContainer(for: PlantsData.self, inMemory: true)
 }

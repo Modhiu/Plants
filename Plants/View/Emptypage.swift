@@ -1,8 +1,9 @@
 import SwiftUI
 import SwiftData
 
-struct EmptyView: View {
-    @StateObject var viewModel = PlantVM()
+struct Emptypage: View {
+    @ObservedObject var viewModel: PlantVM
+    
     var body: some View {
         VStack {
             Text("My Plants 🌱")
@@ -26,8 +27,7 @@ struct EmptyView: View {
         .background(Color.background.ignoresSafeArea())
         
         Button{
-            viewModel.showForm = true
-            
+            viewModel.Adding()
         }label: {
             Image(systemName: "plus")
                 .font(.title2)
@@ -38,13 +38,12 @@ struct EmptyView: View {
         .buttonStyle(.borderedProminent)
         .buttonBorderShape(.circle)
         .tint(.buttonscolor)
-        .sheet(isPresented: $viewModel.showForm) {
-            NewReminder(viewModel: viewModel)
-        }.frame(maxWidth: .infinity, alignment: .trailing)
+        .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(.horizontal, 24 )
     }
 }
 
 #Preview {
-    EmptyView()
+    Emptypage(viewModel: PlantVM())
+        .preferredColorScheme(.dark)
 }

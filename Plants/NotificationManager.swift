@@ -27,8 +27,8 @@ final class NotificationManager{
            content.body = "Hey! let's water \(plantName) 🌱"
            content.sound = .default
 
-           let seconds: TimeInterval = 10
-           //let seconds = TimeInterval(intervalDays(from: days) * 24 * 60 * 60)
+           
+           let seconds = TimeInterval(intervalDays(from: days) * 24 * 60 * 60)
            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: seconds, repeats: true)
 
            let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
