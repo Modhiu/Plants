@@ -105,9 +105,8 @@ class PlantVM : ObservableObject{
     func deleteEditingPlant(context: ModelContext) {
         guard let plant = plantToEdit else { return }
         NotificationManager.shared.cancel(id: plant.id.uuidString)
+        context.delete(plant)
         try? context.save()
-        plantToEdit = nil
-        showForm = false
     }
     func delete(_ plant: PlantsData, context: ModelContext) {
         NotificationManager.shared.cancel(id: plant.id.uuidString)
