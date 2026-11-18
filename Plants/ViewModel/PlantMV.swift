@@ -107,9 +107,11 @@ class PlantVM : ObservableObject{
         NotificationManager.shared.cancel(id: plant.id.uuidString)
         context.delete(plant)
         try? context.save()
+        
     }
     func delete(_ plant: PlantsData, context: ModelContext) {
         NotificationManager.shared.cancel(id: plant.id.uuidString)
+        context.delete(plant)
         try? context.save()
     }
     
