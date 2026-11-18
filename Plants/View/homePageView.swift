@@ -13,7 +13,7 @@ struct homePage: View {
     var body: some View {
         NavigationStack{
             Group {
-                          if !hasSeenSplash && plants.isEmpty {
+                          if !hasSeenSplash {
                               splashview(viewModel: viewModel)
                           } else {
                               switch viewModel.state(for: plants) {
