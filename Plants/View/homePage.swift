@@ -7,7 +7,7 @@ struct homePage: View {
     @StateObject private var viewModel = PlantVM()
     @Environment(\.modelContext) private var context
     @Query private var plants: [PlantsData]
-    @AppStorage("hasSeenSplash") private var hasSeenSplash = false
+    @AppStorage("hasSeenSplash") private var hasSeenSplash = true
     
     
     var body: some View {
